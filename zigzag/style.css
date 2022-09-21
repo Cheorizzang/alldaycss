@@ -1,0 +1,151 @@
+/* Resets */
+body, h1, h2, ul, p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1, h2 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* Typography */
+:root {
+    font-family: 'Montserrat', sans-serif;
+  	font-weight: 500;
+}
+
+/* Layouts */
+/* 가운데 정렬만을 위한 wrapper */
+.wrapper {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+/* Components */
+.section {
+  background-color: rebeccapurple;
+  color: white;
+  padding: 100px 0;
+}
+
+/* .section_white {
+  background-color: seashell;
+  color: salmon;
+} */
+
+.section-header {
+  padding-bottom: 100px;
+  display: flex;
+}
+
+.section-title {
+  width: 26%;
+  flex-shrink: 0;
+  font-size: 40px;
+}
+
+.section-title strong {
+  position: relative;
+  z-index: 1;
+}
+
+.section-title strong::after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: -3px;
+  bottom: 0;
+  height: 0.5em;
+  background-color: orangered;
+  z-index: -1;
+}
+
+.section-description {
+  /* 나중에 뷰포트가 600px 이하로 줄어들 수 있기 때문에 */
+  max-width: 600px;
+  margin: auto 0;
+}
+
+.course {
+  background-color: white;
+  color: #222;
+  display: flex;
+}
+
+.course-cover {
+  width: 26%;
+  flex-shrink: 0;
+}
+
+.course-contents {
+  flex-grow: 1;
+  padding: 24px;
+}
+
+.course-contents h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.course + .course {
+  margin-top: 24px;
+}
+
+.course-cover {
+  position: relative;
+}
+
+.course-cover p {
+  color: white;
+  position: relative;
+  /* z-index는 position:relative 먼저 하거나 또는 flex-item에 줄 수 있음 */
+  z-index: 10;
+  background-color: rgba(81,50,140,0.5);
+  height: 100%;
+  /* 가운데 정렬 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.course-cover-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* 이미지가 가득차게 만들기 */
+  width: 100%;
+  height: 100%;
+  /* 비율 잡기 */
+  object-fit: cover;
+}
+
+.lists {
+  padding-left: 20px;
+}
+
+.lists li + li {
+  margin-top: 10px;
+}
+
+/* li의 콘텐츠의 앞, 즉 li 요소 안에 생김 */
+.lists li::before {
+  content: ' ';
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: #bd8fe8;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: -20px;
+}
